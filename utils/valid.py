@@ -137,8 +137,6 @@ def visualize_ground_truth_and_prediction_separately(model, dataset, idx=0, conf
                     color = 'blue'
                 elif cls_id.item() == 1: #pd-l1 positive tumor cell
                     color = 'red'
-                else: #non-tumor cell
-                    color = 'green'
                 center_x = (x1 + x2)//2
                 center_y = (y1 + y2)//2
                 ax2.scatter(center_x, center_y, facecolors='none',  s=20, marker='o', edgecolors=color, linewidths=1)
@@ -163,9 +161,8 @@ def visualize_ground_truth_and_prediction_separately(model, dataset, idx=0, conf
     
     # 범례 추가
     legend_elements = [
-        patches.Patch(color='blue', label='negative tumor cell'),
-        patches.Patch(color='red', label='positive tumor cell'),
-        patches.Patch(color='green', label='non-tumor cell'),
+        patches.Patch(color='blue', label='nucleus negative tumor cell'),
+        patches.Patch(color='red', label='nucleus positive tumor cell'),
     ]
     fig.legend(handles=legend_elements, loc='lower center', ncol=3, 
                bbox_to_anchor=(0.5, 0.02), fontsize=12)
