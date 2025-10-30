@@ -18,4 +18,7 @@ flip_lr: 0.50000000000            # image flip left-right (probability)
 mosaic: 1.000000000000            # image mosaic (probability)
 mix_up: 0.000000000000            # image mix-up (probability)
 names:
-  0: nucleus
+  0: negative (class 0)
+  1: positive (class 1)
+  2: positive (class 2)
+  3: positive (class 3)
